@@ -1,0 +1,103 @@
+<section class="text-left m-3 p-3">
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">
+      Year {{ driverAndYear.year }} Race Winners
+    </h4>
+    <button
+      type="button"
+      class="close"
+      aria-label="Close"
+      (click)="closeModal()"
+    >
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+
+  <!--TABLE-->
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">SN</th>
+        <th scope="col">Winner & Race Info</th>
+      </tr>
+    </thead>
+    <tbody>
+      <ng-container *ngFor="let race of races; index as i">
+        <tr
+          class="
+            {{
+            race.Results[0].Driver?.driverId.toLowerCase() ===
+            driverAndYear.Driver.driverId.toLowerCase()
+              ? 'highlight'
+              : ''
+          }}"
+        >
+          <th scope="row">
+            {{ i + 1 }}
+          </th>
+          <td>
+            <!--WINNER DETAILS-->
+            <div class="winner">
+              <h5>
+                <a [href]="(race?.Results)[0]?.Driver?.url" target="_blank">
+                  {{ (race?.Results)[0]?.Driver?.givenName }}
+                  {{ (race?.Results)[0]?.Driver?.familyName }}
+                </a>
+              </h5>
+              <small class="d-block">
+                Born: {{ (race?.Results)[0]?.Driver?.dateOfBirth }} /
+                Nationality: {{ (race?.Results)[0]?.Driver?.nationality }}
+              </small>
+
+              <a
+                [href]="(race?.Results)[0]?.Constructor?.url"
+                class="d-block"
+                target="_blank"
+              >
+                <i class="fa fa-car"></i>
+                {{ (race?.Results)[0]?.Constructor.name }} /
+                {{ (race?.Results)[0]?.Constructor.nationality }}
+              </a>
+            </div>
+
+            <!--Race Name and Season-->
+            <h6>
+              {{ race?.raceName }}, Round {{ race?.round }}, {{ race?.season }},
+            </h6>
+
+            <!--CIRCUIT NAME-->
+            <small class="d-block">
+              <i class="fa fa-university"></i>
+              <a [href]="race.Circuit.url" target="_blank">
+                {{ race?.Circuit?.circuitName }}</a
+              >
+            </small>
+
+            <!--CIRCUIT LOCATION-->
+            <small class="d-block">
+              <i class="fa fa-map"></i>
+              <a
+                [href]="
+                  'http://www.google.com/maps/place/' +
+                  race?.Circuit?.Location?.lat +
+                  ',' +
+                  race?.Circuit?.Location?.long
+                "
+                target="_blank"
+              >
+                {{ race?.Circuit?.Location?.locality }},
+                {{ race?.Circuit?.Location?.country }}
+              </a>
+            </small>
+
+            <small class="d-block">
+              Time: {{ (race?.Results)[0]?.Time?.time }}
+              {{ (race?.Results)[0]?.Time?.millis }}ms / Laps:
+              {{ (race?.Results)[0]?.laps }}
+            </small>
+          </td>
+        </tr>
+      </ng-container>
+    </tbody>
+  </table>
+</section>

@@ -1,0 +1,28 @@
+#mainsite_container{
+  max-width: 900px;
+  margin: 0 auto;
+  background: white;
+  min-height: 100vh;
+  padding: 1.5rem 3rem;
+
+  /**Blurred shadow background */
+  -webkit-box-shadow: 0px 0px 26px -1px rgba(0,0,0,0.64);
+  -moz-box-shadow: 0px 0px 26px -1px rgba(0,0,0,0.64);
+  box-shadow: 0px 0px 26px -1px rgba(0,0,0,0.64);
+}
+
+.loader{
+  text-align: center;
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  z-index: 999999;
+  background: rgba(255,255,255,0.85);
+  .spinnerholder{
+    width: 100px;
+    height: 100px;
+    margin-left: 50%;
+    margin-top: 30%;
+    transform: translate(-50px, -100px);
+  }
+}

@@ -1,0 +1,58 @@
+{
+  "_from": "line-awesome",
+  "_id": "line-awesome@1.0.2",
+  "_inBundle": false,
+  "_integrity": "sha512-IDBNPCKlj3Rsvs7+Kt9hyC8q6r8v54LLoUgOkRiNUPWGcVK0gsgHnOaL59YLs2TK6KWFySGMwsC3jRCGI04jNQ==",
+  "_location": "/line-awesome",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "tag",
+    "registry": true,
+    "raw": "line-awesome",
+    "name": "line-awesome",
+    "escapedName": "line-awesome",
+    "rawSpec": "",
+    "saveSpec": null,
+    "fetchSpec": "latest"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/line-awesome/-/line-awesome-1.0.2.tgz",
+  "_shasum": "7f4f954ce7c1ffc8ca0e8aa575768d1f46e429cc",
+  "_spec": "line-awesome",
+  "_where": "C:\\Users\\dell\\m2\\mobiquitytestng8",
+  "author": {
+    "name": "Alex Sofronie",
+    "email": "alsofronie@gmail.com"
+  },
+  "bugs": {
+    "url": "https://github.com/alsofronie/line-awesome/issues"
+  },
+  "bundleDependencies": false,
+  "deprecated": false,
+  "description": "Line Awesome by Icon8, packaged in scss. A drop-in replacement for FontAwesome.",
+  "devDependencies": {
+    "node-sass": "^4.7.2"
+  },
+  "homepage": "https://github.com/alsofronie/line-awesome",
+  "keywords": [
+    "FontAwesome",
+    "LineAwesome",
+    "Icon8"
+  ],
+  "license": "MIT",
+  "main": "src/line-awesome.scss",
+  "name": "line-awesome",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alsofronie/line-awesome.git"
+  },
+  "scripts": {
+    "dev": "node-sass src/line-awesome.scss > css/line-awesome.css",
+    "prod": "node-sass --source-comments false --output-style compressed src/line-awesome.scss > css/line-awesome.min.css"
+  },
+  "style": "css/line-awesome.css",
+  "version": "1.0.2"
+}
